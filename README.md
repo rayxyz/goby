@@ -46,7 +46,10 @@ $GOPATH/src/goby$ tree -d
 
 # How to use
 ## Setup
-## The default.yaml configuration file
+### Init database
+To test out if the framework is working as expected by going through the workflow. We need initiate the test database `goby` here. Executing the SQL script `configs/init.sql` will initiate the database.
+
+### The default.yaml configuration file
 `default.yaml` lives at `/goby/conf/default.yaml`. It is the base configuration file that specifies the basic services  and other essential configs used in the framework.
 
 ```
@@ -55,13 +58,13 @@ sudo mkdir -p /goby/conf
 sudo copy default.yaml /goby/conf/
 ```
 
-## Build the binaries
+### Build the binaries
 ```
 cd $GOPATH/src/goby/services/helloworld/
 go build -o helloworld
 ```
 
-## Run your services
+### Run your services
 ```
 cd $GOPATH/src/goby/services/helloworld/
 ./helloworld
