@@ -1,0 +1,26 @@
+# Services configuration
+
+basic:
+  mapper_tag: json
+  extra:
+
+redis:
+  addr: localhost:6379
+  password: 
+  db: 0
+
+services:
+  - 
+    name: helloworld
+    http_endpoint:
+      host: localhost
+      port: 9090
+      route_prefixes:
+        - 
+          /helloworld/v1
+    dsn: 
+      db_driver: mysql
+      db: goby:123456(localhost:3306)/goby
+    extra:
+	  description: An example app
+	  static_resource_path_webapp: /home/ray/goby/webapp
