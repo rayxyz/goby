@@ -1,0 +1,40 @@
+// ignore all
+*
+
+// except subdirs
+!*/
+
+// except all of these
+!.gitignore
+!*.go
+!*.proto
+!*.html
+!*.css
+!*.less
+!*.scss
+!*.js
+!*.jpeg
+!*.jpg 
+!*.png
+!*.ico
+!*.gif
+!*.md
+!*.yaml
+!*.yml 
+!*.svg
+!*.ttf
+!*.woff
+!*.woff2
+!*.eot
+!*.json
+!*.patch
+!*.sql
+!*.mod
+!*.sum
+!*.vue
+!*.map
+!*.txt
+!.babelrc
+
+
+
