@@ -21,8 +21,8 @@ func indexPageHandler(ctx context.Context, req *httpx.Request, resp *httpx.Respo
 
 	tmpl, err := template.New(
 		filepath.Join(staticResourcePathWebapp, "index.html"),
-		filepath.Join(staticResourcePathWebapp, "header.html"),
-		filepath.Join(staticResourcePathWebapp, "footer.html"),
+		filepath.Join(staticResourcePathWebapp, "pages/header.html"),
+		filepath.Join(staticResourcePathWebapp, "pages/footer.html"),
 	)
 	if err != nil {
 		return err

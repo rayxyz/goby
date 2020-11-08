@@ -27,11 +27,13 @@ var (
 
 func routing(router *httpx.Router) {
 	fsWebapp := http.FileServer(http.Dir(staticResourcePathWebapp))
-	router.Router.PathPrefix("/static/").Handler(http.StripPrefix(prefix, fsWebapp))
+	router.Router.PathPrefix("/static/").Handler(fsWebapp)
+
+	router.Group("/", false, false, func() {
+		router.Get("/", indexPageHandler)
+	})
 
 	router.Group(prefix, false, false, func() {
-
-		router.Get("/", indexPageHandler)
 
 		// Say hello
 		router.Get("/hello", helloHandler)
@@ -46,8 +48,9 @@ func routing(router *httpx.Router) {
 
 func main() {
 	port := svc.HTTPEndpoint.Port
-	log.Printf("hello-world is running on port => %d\n\n", port)
+	log.Printf("helloworld is running on port => %d\n\n", port)
 	log.Println("prefix => ", prefix)
+	log.Println("static_resource_path_webapp => ", staticResourcePathWebapp)
 
 	router := &httpx.Router{
 		Router: mux.NewRouter().StrictSlash(true),
